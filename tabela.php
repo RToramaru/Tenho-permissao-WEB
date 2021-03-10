@@ -14,29 +14,21 @@ $requestData= $_REQUEST;
 $columns = array( 
 	0 =>'placa', 
 	1 => 'data',
-	2 => 'imagem',
-	3 => 'modelo',
-	4 => 'cor',
-	5 => 'uf',
-	6 => 'municipio'
+	2 => 'imagem'
 );
 
 //Obtendo registros de número total sem qualquer pesquisa
-$result_user = "SELECT placa, data, imagem, modelo, cor, uf, municipio FROM dados";
+$result_user = "SELECT placa, data, imagem FROM dados";
 
 $resultado_user =mysqli_query($conn, $result_user);
 $qnt_linhas = mysqli_num_rows($resultado_user);
 
 //Obter os dados a serem apresentados
-$result_usuarios = "SELECT placa, data, imagem, modelo, cor, uf, municipio FROM dados WHERE 1=1";
+$result_usuarios = "SELECT placa, data, imagem FROM dados WHERE 1=1";
 if( !empty($requestData['search']['value']) ) {   // se houver um parâmetro de pesquisa, $requestData['search']['value'] contém o parâmetro de pesquisa
 	$result_usuarios.=" AND ( placa LIKE '".$requestData['search']['value']."%' ";    
 	$result_usuarios.=" OR data LIKE '".$requestData['search']['value']."%' ";
 	$result_usuarios.=" OR imagem LIKE '".$requestData['search']['value']."%' )";
-	$result_usuarios.=" OR modelo LIKE '".$requestData['search']['value']."%' ";
-	$result_usuarios.=" OR cor LIKE '".$requestData['search']['value']."%' ";
-	$result_usuarios.=" OR uf LIKE '".$requestData['search']['value']."%' ";
-	$result_usuarios.=" OR municipio LIKE '".$requestData['search']['value']."%' ";
 
 }
 
@@ -53,10 +45,6 @@ while( $row_usuarios =mysqli_fetch_array($resultado_usuarios) ) {
 	$dado[] = $row_usuarios["placa"];
     $dado[] = $row_usuarios["data"];
 	$dado[] = '<img src="data:image/jpg;base64,' . $row_usuarios["imagem"]. '" height="100" onMouseOver="aumenta(this)" onMouseOut="diminui(this)"/>';		
-	$dado[] = $row_usuarios["modelo"];
-	$dado[] = $row_usuarios["cor"];
-	$dado[] = $row_usuarios["uf"];
-	$dado[] = $row_usuarios["municipio"];
 	$dados[] = $dado;
 }
 

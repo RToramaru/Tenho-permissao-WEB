@@ -3,10 +3,12 @@
 	padding: 0px;
 }
 body {
-	background-image: url("../IMAGENS/fundo3.jpg");
-	background-position: 50% 70%;
+	background-image: url("../IMAGENS/fundo1.jpg");
 	color: white;
 	font-family: Arial;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
 }
 input{
 	display: block;

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://getbootstrap.com/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet"  href="css/estiloPrincipal.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" language="javascript">
@@ -63,7 +64,7 @@
         <li><input type="submit" value="SAIR" class="sair" onclick="location.href='sair.php'"/></li>
       </ul>
     </div>
-  </nav>
+</nav>
 <body>
         <table id="id_tabela" class="display" style="width:100%">
 			<thead>
@@ -71,10 +72,6 @@
 					<th>Placa</th>
 					<th>Data</th>
 					<th>Imagem</th>
-                    <th>Modelo</th>
-                    <th>Cor</th>
-                    <th>UF</th>
-                    <th>Município</th>
 				</tr>
 			</thead>
 		</table>
